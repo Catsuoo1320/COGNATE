@@ -571,31 +571,74 @@ p {
 
 /* Additional adjustments for very small phones */
 @media (max-width: 480px) {
+  body {
+    flex-direction: column;
+    height: auto; /* Allow the height to adjust dynamically */
+    padding: 10px;
+  }
+
   .navbar {
-    font-size: 12px; /* Further reduce font size */
-    padding: 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #ffffff; /* Ensure navbar is visually separate */
   }
 
   .homebutton, .databutton, .recordbutton, .aboutbutton {
-    padding: 6px;
-    font-size: 14px;
+    width: 100%; /* Make buttons span full width */
+    padding: 8px;
+    font-size: 16px;
+    margin: 5px 0; /* Add space between buttons */
+  }
+
+  .oyster-index {
+    margin-left: 20px; /* Reduce side margins */
+    margin-right: 20px;
+  }
+
+  .mushroom-image {
+    width: 100%; /* Scale image to fit screen */
+    height: auto; /* Maintain aspect ratio */
   }
 
   #oyster {
-    font-size: 24px; /* Adjust title size */
+    font-size: 36px; /* Adjust font size for smaller screens */
+    text-align: center;
   }
 
-  .graph {
-    width: 40px;
-    height: 200px;
-  }
-
-  .graph-label {
-    font-size: 10px;
+  .container {
+    grid-template-columns: repeat(2, 1fr); /* Stack containers in one column */
+    gap: 15px; /* Reduce spacing between items */
+    padding: 20px; /* Reduce padding */
   }
 
   .uprightcontainer, .upleftcontainer, .lowrightcontainer, .lowleftcontainer {
-    padding: 10px;
+    width: auto; /* Let width adjust to screen */
+    padding: 20px;
+    justify-content: center;
+   
+    align-content: center;
+  }
+
+  .datacontainers {
+    flex-direction: column; /* Stack data containers vertically */
+    gap: 20px; /* Reduce gap */
+    margin-top: 50px;
+  }
+
+  .graph {
+    width: 60px; /* Reduce graph width */
+    height: 300px; /* Reduce graph height */
+  }
+
+  .percentage {
+    font-size: 14px; /* Smaller font for percentages */
+  }
+
+  .graph-label {
+    font-size: 12px; /* Smaller graph label */
   }
 }
 
