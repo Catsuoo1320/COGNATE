@@ -499,7 +499,9 @@ p {
   body {
     flex-direction: column;
     height: auto; /* Allow the height to adjust dynamically */
-    padding: 10px;
+    padding: 2vw;
+    justify-content: center;
+    align-content: center;
   }
 
   .navbar {
@@ -507,41 +509,29 @@ p {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+
     background-color: #ffffff; /* Ensure navbar is visually separate */
   }
 
   .homebutton, .databutton, .recordbutton, .aboutbutton {
-    width: 100%; /* Make buttons span full width */
-    padding: 8px;
-    font-size: 16px;
-    margin: 5px 0; /* Add space between buttons */
+    width: 70vw; /* Make buttons span full width */
+    font-size: 3vw;
+    margin: 4vw 0; /* Add space between buttons */
   }
 
-  .oyster-index {
-    margin-left: 20px; /* Reduce side margins */
-    margin-right: 20px;
-  }
-
-  .mushroom-image {
-    width: 100%; /* Scale image to fit screen */
-    height: auto; /* Maintain aspect ratio */
-  }
-
-  #oyster {
-    font-size: 36px; /* Adjust font size for smaller screens */
-    text-align: center;
-  }
+ 
 
   .container {
-    grid-template-columns: repeat(2, 1fr); /* Stack containers in one column */
-    gap: 15px; /* Reduce spacing between items */
-    padding: 20px; /* Reduce padding */
+    grid-template-columns: repeat(1, 1fr); /* Stack containers in one column */
+    gap: 2vw; /* Reduce spacing between items */
+    padding: 3vw; /* Reduce padding */
+    justify-content: center;
+    margin-top: 20vw;
   }
 
   .uprightcontainer, .upleftcontainer, .lowrightcontainer, .lowleftcontainer {
     width: auto; /* Let width adjust to screen */
-    padding: 20px;
+    padding: 3vw;
     justify-content: center;
    
     align-content: center;
@@ -549,21 +539,21 @@ p {
 
   .datacontainers {
     flex-direction: column; /* Stack data containers vertically */
-    gap: 20px; /* Reduce gap */
-    margin-top: 50px;
+    gap: 5vw; /* Reduce gap */
+    margin-top: 3vw;
   }
 
   .graph {
-    width: 60px; /* Reduce graph width */
-    height: 300px; /* Reduce graph height */
+    width: 20vw; /* Reduce graph width */
+    height: 80vw; /* Reduce graph height */
   }
 
   .percentage {
-    font-size: 14px; /* Smaller font for percentages */
+    font-size: 3vw; /* Smaller font for percentages */
   }
 
   .graph-label {
-    font-size: 12px; /* Smaller graph label */
+    font-size: 3vw; /* Smaller graph label */
   }
 }
 
