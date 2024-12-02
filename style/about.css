@@ -1,0 +1,284 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff00;
+    display: flex;
+  
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+   
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    padding-top: 20px;
+    padding-bottom:20px;
+    justify-content:center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+  }
+  
+  .logo {
+    color: #1a2421;
+    padding-right: 100px;
+    padding: 6px;
+    margin-right:50px;
+  
+  }
+  
+  .homebutton {
+    background-color: white;
+    color: #5f6f52;
+    align-items:start;
+    border: none;
+    padding: 10px 100px;
+    margin-left: 60x;
+    margin-right: 60px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+  
+  
+  .homebutton:hover {
+    background-color:#5f6f52;
+    color: white;
+    align-items:start;
+    border: none;
+    padding: 10px 100px;
+    margin-left: 60x;
+    margin-right: 60px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .databutton {
+    background-color: white;
+    color: #5f6f52;
+    align-items: center;
+    border: none;
+    padding: 10px 100px;
+    margin-left: 60x;
+    margin-right: 60px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+  
+  .databutton:hover {
+    background-color: #5f6f52;
+    color: white;
+    align-items:start;
+    border: none;
+    padding: 10px 100px;
+    margin-left: 60x;
+    margin-right: 60px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .recordbutton {
+    background-color: white;
+    color: #5f6f52;
+    align-items: center;
+    border: none;
+    padding: 10px 100px;
+    margin-left: 60x;
+    margin-right: 60px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+  
+  .recordbutton:hover {
+    background-color: #5f6f52;
+    color: white;
+    align-items:start;
+    border: none;
+    padding: 10px 100px;
+    margin-left: 60x;
+    margin-right: 60px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .aboutbutton {
+    background-color: white;
+    color: #5f6f52;
+    align-items: center;
+    border: none;
+    padding: 10px 100px;
+    margin-left: 60;
+    margin-right: 60px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+  
+  .aboutbutton:hover {
+    background-color: #5f6f52;
+    color: white;
+    align-items:start;
+    border: none;
+    padding: 10px 100px;
+    margin-left: 60x;
+    margin-right: 60px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  
+  .homebutton.active,.data.active,.recordbutton.active,.aboutbutton.active  {
+    background-color: #666;
+  }
+  
+  .homebutton.active,.data.active,.recordbutton.active,.aboutbutton.active {
+    background-color: rgb(95, 111, 82);;
+  }
+  
+  .hamburger-menu {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .hamburger-menu .line {
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+  }
+
+.dcontent {
+    position: relative;
+    /* Ensure the activity content is positioned relative to this */
+    width: calc(100% - 250px);
+    /* Adjust width for sidebar */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: auto; /* Enable scrolling if content exceeds container height */
+    height: auto; /* Allow content to adjust height dynamically */
+    margin-left: 100px;
+    /* Adjust margin for sidebar */
+
+    /* Enable vertical scrolling */
+
+}
+
+.dheader .dtitle {
+    background-color: #5f6f52;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    font-size: 70px;
+}
+
+
+
+.teamintro h2 {
+    font-size: 24px;
+    color: #5f6f52;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.teamintro h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.member {
+    text-align: center;
+}
+
+.member img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.member h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.member p {
+    font-size: 16px;
+    color: gray;
+}
+
+.aboutus{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #ffffff; /* Ensure navbar is visually separate */
+  }
+
+  .hamburger-menu {
+      display: flex; /* Show hamburger menu on small screens */
+  }
+
+  .homebutton, .databutton, .recordbutton, .aboutbutton {
+    width: 100%; /* Full width buttons */
+    margin: 5px 0; /* Add space between buttons */
+    padding: 8px; /* Reduce padding */
+    font-size: 16px; /* Adjust font size */
+
+  }
+
+  .dheader .dtitle {
+      font-size: 40px; /* Further adjust title size */
+  }
+
+  .team {
+      flex-direction: column; /* Stack team members vertically */
+  }
+
+  .dcontent {
+    width: 100%;
+    /* Full width on mobile screens */
+    margin-left: 0;
+    /* Remove margin for mobile */
+    height: 90vh;
+    /* Full viewport height */
+    /* overflow-y: auto; Enable vertical scrolling */
+}
+}

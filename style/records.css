@@ -1,0 +1,284 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff00;
+    display: flex;
+  
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+   
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    padding-top: 20px;
+    padding-bottom:20px;
+    justify-content:center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+  }
+  
+  .logo {
+    color: #1a2421;
+    padding-right: 100px;
+    padding: 6px;
+    margin-right:50px;
+  
+  }
+  
+  .homebutton {
+    background-color: white;
+    color: #5f6f52;
+    align-items:start;
+    border: none;
+    padding: 10px 100px;
+    margin-left: 60x;
+    margin-right: 60px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+  
+  
+  .homebutton:hover {
+    background-color:#5f6f52;
+    color: white;
+    align-items:start;
+    border: none;
+    padding: 10px 100px;
+    margin-left: 60x;
+    margin-right: 60px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .databutton {
+    background-color: white;
+    color: #5f6f52;
+    align-items: center;
+    border: none;
+    padding: 10px 100px;
+    margin-left: 60x;
+    margin-right: 60px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+  
+  .databutton:hover {
+    background-color: #5f6f52;
+    color: white;
+    align-items:start;
+    border: none;
+    padding: 10px 100px;
+    margin-left: 60x;
+    margin-right: 60px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .recordbutton {
+    background-color: white;
+    color: #5f6f52;
+    align-items: center;
+    border: none;
+    padding: 10px 100px;
+    margin-left: 60x;
+    margin-right: 60px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+  
+  .recordbutton:hover {
+    background-color: #5f6f52;
+    color: white;
+    align-items:start;
+    border: none;
+    padding: 10px 100px;
+    margin-left: 60x;
+    margin-right: 60px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .aboutbutton {
+    background-color: white;
+    color: #5f6f52;
+    align-items: center;
+    border: none;
+    padding: 10px 100px;
+    margin-left: 60;
+    margin-right: 60px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+  
+  .aboutbutton:hover {
+    background-color: #5f6f52;
+    color: white;
+    align-items:start;
+    border: none;
+    padding: 10px 100px;
+    margin-left: 60x;
+    margin-right: 60px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  
+  .homebutton.active,.data.active,.recordbutton.active,.aboutbutton.active  {
+    background-color: #666;
+  }
+  
+  .homebutton.active,.data.active,.recordbutton.active,.aboutbutton.active {
+    background-color: rgb(95, 111, 82);;
+  }
+  
+  .hamburger-menu {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .hamburger-menu .line {
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+  }
+
+  /* RECORDS */
+
+.green-background {
+    width: 100%; /* Full width */
+    height: 700px; /* Adjust the height as needed */
+    background-color: #5f6f52; /* Green background color */
+    margin: 20px 200px; /* Optional: Adds space above and below the green space */
+    justify-content: center;
+    margin-top: 100px;
+    border-radius: 60px;
+  align-content: center;
+  }
+
+
+.info {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+#camera-feed{
+  width: 500px;
+  height: 400px;
+  
+}
+
+.picture {
+  margin-bottom: 40px;
+}
+.mushroom-info {
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.mushroom-info p {
+  margin: 5px 0;
+}
+
+.picanalysis{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#image-analysis, #image-timestamp{
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
+/* For phones */
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #ffffff; /* Ensure navbar is visually separate */
+  }
+
+  .homebutton, .databutton, .recordbutton, .aboutbutton {
+    width: 100%; /* Full width buttons */
+    margin: 5px 0; /* Add space between buttons */
+    padding: 8px; /* Reduce padding */
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .green-background {
+    width: 90%; /* Make the width more fluid for small screens */
+    padding: 15px; /* Adjust padding */
+}
+
+  #camera-feed {
+    width: 100%; /* Full width of the screen */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .picanalysis {
+    padding: 10px;
+  }
+
+  .mushroom-info {
+    padding: 10px; /* Smaller padding */
+    font-size: 14px; /* Smaller font size */
+  }
+
+
+}
+
+/* For very small phones */
+@media (max-width: 480px) {
+  .homebutton, .databutton, .recordbutton, .aboutbutton {
+    font-size: 14px; /* Smaller font */
+    padding: 6px; /* Compact padding */
+  }
+
+  .navbar {
+    font-size: 12px; /* Adjust navbar text size */
+  }
+
+  .mushroom-info {
+    font-size: 12px; /* Smaller text in mushroom info */
+  }
+}
+

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style/data.css" rel="stylesheet"/>
+    <title>DATA - COGNATE</title>
+</head>
+<body>
+
+    <style>
+        body {
+        
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+        </style>
+
+
+   
+<section>
+    <div class="navbar">
+        <span class="logo">10:00 AM</span>
+        <a href="home.html" class="homebutton">Home</a>
+        <a href="index.html" class="databutton">Data</a>
+        <a href="records.html" class="recordbutton">Records</a>
+        <a href="about.html" class="aboutbutton">About</a>
+       
+      </div>
+
+    </section>
+
+<div class="datacontainers">
+    <div class="container">
+        
+        <div class="upleftcontainer">
+            <span class="icon temperature-icon"></span>
+            <div class="temperaturedata">
+               <span id="temperature-cognate">Loading...</span> °C
+            </div>
+            <p>Temperature</p>
+        </div>
+
+        <div class="uprightcontainer">
+            <span class="icon humidity-icon"></span>
+            <div class="humiditydata">
+                <span id="humidity-cognate">Loading...</span> %
+             </div>
+            <p>Humidity</p>
+        </div>
+
+        <div class=" lowrightcontainer2">
+            <span class="icon soil_1-icon"></span>
+            <div class="soil_1data">
+                Resistive: <span id="soil_1status">Loading...</span>
+                Capacitive: <span id="cap1_1status">Loading...</span>
+             </div>
+            <p>Soil 1</p>
+        </div>
+
+        <div class="lowleftcontainer">
+            <span class="icon clock-icon">&#x1F553;</span>
+            <h2 id="countdown">2:00</h2>
+            <div class="light-data">
+                <span id="light-status">Loading...</span>
+             </div>
+        </div>
+
+    
+
+        <div class=" lowrightcontainer">
+            <span class="icon fan-icon"></span>
+            <div class="fandata">
+                <span id="fan-status">Loading...</span>
+             </div>
+            <p>Status</p>
+        </div>
+
+        <div class=" lowrightcontainer2">
+            <span class="icon soil_2-icon"></span>
+            <div class="soil_2data">
+                Resistive: <span id="soil_2status">Loading...</span>
+                Capacitive: <span id="cap2_1status">Loading...</span>
+             </div>
+            <p>Soil 2</p>
+        </div>
+    </div>
+    
+
+    <div class="container2">
+        
+
+        <div class="graph-container">
+            <div class="graph-wrapper">
+              <div class="graph">
+                <div id="graph1" class="graph-fill" style="height: 50%;">
+                  <span class="percentage" id="percent1">50%</span>
+                </div>
+              </div>
+              <p class="graph-label" id="label1">Water Tank Level</p>
+            </div>
+            <div class="graph-wrapper">
+              <div class="graph">
+                <div id="graph2" class="graph-fill" style="height: 75%;">
+                  <span class="percentage" id="percent2">75%</span>
+                </div>
+              </div>
+              <p class="graph-label" id="label2">Water Mist Level</p>
+            </div>
+          </div>
+          </div>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+    <script>
+        function fetchfanData() {
+            fetch('http://192.168.0.112:5000/fan')
+                .then(response => response.json())
+                .then(data => {
+                    const buzzerElement = document.getElementById('fan-status');
+                        buzzerElement.textContent = data.fanstatus
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        }
+    // Update the buzzer status every 2 seconds
+        setInterval(fetchfanData, 1000);
+
+    // Initial call to set the status when the page loads
+    fetchfanData();
+    </script>
+
+<script>
+    function fetchlightData() {
+        fetch('http://192.168.0.112:5000/lights')
+            .then(response => response.json())
+            .then(data => {
+                const buzzerElement = document.getElementById('light-status');
+                    buzzerElement.textContent = data.lightstatus
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }
+// Update the buzzer status every 2 seconds
+    setInterval(fetchlightData, 1000);
+
+// Initial call to set the status when the page loads
+fetchlightData();
+</script>
+
+<script>
+    function fetchumData() {
+        fetch('http://192.168.0.112:5000/humidity')
+            .then(response => response.json())
+            .then(data => {
+                const buzzerElement = document.getElementById('humidity-cognate');
+                    buzzerElement.textContent = data.humdata
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }
+// Update the buzzer status every 2 seconds
+    setInterval(fetchumData, 1000);
+
+// Initial call to set the status when the page loads
+fetchumData();
+</script>
+
+<script>
+    function fetchtemData() {
+        fetch('http://192.168.0.112:5000/temperature')
+            .then(response => response.json())
+            .then(data => {
+                const buzzerElement = document.getElementById('temperature-cognate');
+                    buzzerElement.textContent = data.temdata
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }
+// Update the buzzer status every 2 seconds
+    setInterval(fetchtemData, 1000);
+
+// Initial call to set the status when the page loads
+fetchtemData();
+</script>
+
+<script>
+    function fetchsoil1Data() {
+        fetch('http://192.168.0.112:5000/soil')
+            .then(response => response.json())
+            .then(data => {
+                const res1 = document.getElementById('soil_1status');
+                const res2 = document.getElementById('soil_2status');
+                const cap1 = document.getElementById('cap1_1status');
+                const cap2 = document.getElementById('cap2_1status');
+                    res1.textContent = data.res1
+                    res2.textContent = data.res2
+                    cap1.textContent = data.cap1
+                    cap2.textContent = data.cap2
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }
+// Update the buzzer status every 2 seconds
+    setInterval(fetchsoil1Data, 1000);
+
+// Initial call to set the status when the page loads
+fetchsoil1Data();
+</script>
+
+<script>
+    // Function to update the countdown timer
+    function updateCountdown() {
+        fetch('http://192.168.0.112:5000/remaining_time')
+            .then(response => response.json())
+            .then(data => {
+                const remainingTime = data.time;
+                const minutes = Math.floor(remainingTime / 60);
+                const seconds = remainingTime % 60;
+                const formattedTime = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                document.getElementById('countdown').textContent = formattedTime;
+            });
+    }
+
+    // Update the countdown every second
+    setInterval(updateCountdown, 1000);
+</script>
+
+
+<script>
+// Function to update the water level
+async function updateWaterLevel() {
+  try {
+    // Fetch the current water level from Flask API
+    const response = await fetch('http://192.168.0.112:5000/distance');
+    const data = await response.json();
+
+    console.log('Fetched data from Flask:', data); // Debug log
+    const percentage = data.percentage; // Extract the percentage value
+
+    console.log('Updating UI with percentage:', percentage); // Debug log
+    
+    // Get the elements for fill bar and percentage text
+    const fill = document.getElementById('graph1');
+    const percentageText = document.getElementById('percent1');
+
+    // Update the height of the fill bar based on the percentage
+    fill.style.height = `${percentage}%`; 
+
+    // Display the percentage text
+    percentageText.textContent = `${percentage}%`; 
+  } catch (error) {
+    console.error('Error fetching water level:', error); // Error handling
+  }
+}
+
+// Call the updateWaterLevel function every 2 seconds (2000 ms)
+setInterval(updateWaterLevel, 1000);
+  </script>
+
+<script>
+    // Function to update the water level
+    async function updateWaterLevel2() {
+        try {
+            // Fetch the current water level from Flask API
+            const response = await fetch('http://192.168.0.112:5000/distance2');
+            const data = await response.json();
+    
+            console.log('Fetched data from Flask:', data); // Debug log
+    
+            // Extract the percentage value from API response
+            const percentage2 = data.percentage; // Use the correct key from the Flask response
+    
+            console.log('Updating UI with percentage:', percentage2); // Debug log
+            
+            // Get the elements for fill bar and percentage text
+            const fill = document.getElementById('graph2');
+            const percentageText = document.getElementById('percent2');
+    
+            // Update the height of the fill bar based on the percentage
+            fill.style.height = `${percentage2}%`; 
+    
+            // Display the percentage text
+            percentageText.textContent = `${percentage2}%`; 
+        } catch (error) {
+            console.error('Error fetching water level:', error); // Error handling
+        }
+    }
+    
+    // Call the updateWaterLevel function every 1 second (1000 ms)
+    setInterval(updateWaterLevel2, 1000);
+</script>
+</body>
+</html>

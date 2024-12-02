@@ -1,0 +1,449 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff00;
+    display: flex;
+    background-image: url('bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+    height: 90vh;
+  
+
+justify-content: center;
+   
+}
+
+/*class oyster image in index*/
+.oyster-index{
+margin-right: 80px;
+  margin-left: 220px;
+}
+
+.oyster-index .mushroom-image{
+margin-left: 50px; 
+ }
+.mushroom-image /*oyster image*/
+{
+  width: 700px;
+  height: auto;
+  display: block;
+
+  margin-right: 0px;
+  filter: grayscale(50%);
+}
+
+/*oyster mushroom text in index*/
+#oyster {
+  font-family: fantasy, Helvetica, sans-serif ;
+  font-size:50px;
+  color:#f4f1de;
+  text-shadow: 4px 4px 7px rgba(255, 255, 255, 0.5);
+}
+/*navigation bar*/
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  padding-top: 20px;
+  padding-bottom:20px;
+  justify-content:center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
+
+.logo {
+  color: #1a2421;
+  padding-right: 100px;
+  padding: 6px;
+  margin-right:50px;
+
+}
+
+.homebutton {
+  background-color: white;
+  color: #5f6f52;
+  align-items:start;
+  border: none;
+  padding: 10px 100px;
+  margin-left: 60x;
+  margin-right: 60px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+
+.homebutton:hover {
+  background-color:#5f6f52;
+  color: white;
+  align-items:start;
+  border: none;
+  padding: 10px 100px;
+  margin-left: 60x;
+  margin-right: 60px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.databutton {
+  background-color: white;
+  color: #5f6f52;
+  align-items: center;
+  border: none;
+  padding: 10px 100px;
+  margin-left: 60x;
+  margin-right: 60px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.databutton:hover {
+  background-color: #5f6f52;
+  color: white;
+  align-items:start;
+  border: none;
+  padding: 10px 100px;
+  margin-left: 60x;
+  margin-right: 60px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.recordbutton {
+  background-color: white;
+  color: #5f6f52;
+  align-items: center;
+  border: none;
+  padding: 10px 100px;
+  margin-left: 60x;
+  margin-right: 60px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.recordbutton:hover {
+  background-color: #5f6f52;
+  color: white;
+  align-items:start;
+  border: none;
+  padding: 10px 100px;
+  margin-left: 60x;
+  margin-right: 60px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.aboutbutton {
+  background-color: white;
+  color: #5f6f52;
+  align-items: center;
+  border: none;
+  padding: 10px 100px;
+  margin-left: 60;
+  margin-right: 60px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.aboutbutton:hover {
+  background-color: #5f6f52;
+  color: white;
+  align-items:start;
+  border: none;
+  padding: 10px 100px;
+  margin-left: 60x;
+  margin-right: 60px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+
+
+.homebutton.active,.data.active,.recordbutton.active,.aboutbutton.active  {
+  background-color: #666;
+}
+
+.homebutton.active,.data.active,.recordbutton.active,.aboutbutton.active {
+  background-color: rgb(95, 111, 82);;
+}
+
+.hamburger-menu {
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger-menu .line {
+  width: 100%;
+  height: 4px;
+  background-color: #333;
+}
+
+
+/*
+.menu-icon {
+  color: #1a2421;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/*=========================== END OF NAVIGATION BAR ================================================*/
+
+/* DATA CONTAINER */
+.container {
+  justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.uprightcontainer, .upleftcontainer, .lowrightcontainer, .lowleftcontainer {
+    background-color: #5f6f52;
+    border-radius: 10px;
+    padding: 50px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 150px;
+}
+
+.icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.temperature-icon::before { content: "🌡️"; }
+.humidity-icon::before { content: "💧"; }
+.fan-icon::before { content: "💨"; }
+.clock-icon:before {content: "⏱️";}
+
+h2 {
+    margin: 10px 0;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+p {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+
+
+/*    HOME    */
+
+
+
+
+.uprightcontainer2, .upleftcontainer2, .lowrightcontainer2, .lowleftcontainer2 {
+  background-color: #5f6f52;
+  border-radius: 10px;
+  padding: 50px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 150px;
+}
+
+.icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.waterlevel_tank-icon::before { content: "💧🎚️"; }
+.waterlevel_mist-icon::before { content: "💧🎚️"; }
+.soil_1-icon::before { content: "🌱"; }
+.soil_2-icon:before {content: "🌱";}
+
+
+
+p {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.datacontainers{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 100px;
+}
+
+.graph-container {
+  display: flex;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.graph {
+  width: 80px;
+  height: 500px;
+  background-color: #d3d3d3;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.graph-fill {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #5f6f52;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: flex-end;
+}
+
+.percentage {
+  color: white;
+  position:absolute;
+  bottom: 10px; /* Adjust the position for better visibility */
+
+}
+
+.graph-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.graph-label {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #000000;
+  font-weight: bolder;
+}
+
+.temperaturedata, .humiditydata, .soil_1data,.light-data,.fandata,.soil_2data{
+  color:#ffffff;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+/* General mobile styling */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    height: auto; /* Allow the height to adjust dynamically */
+    padding: 10px;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #ffffff; /* Ensure navbar is visually separate */
+  }
+
+  .homebutton, .databutton, .recordbutton, .aboutbutton {
+    width: 100%; /* Make buttons span full width */
+    padding: 8px;
+    font-size: 16px;
+    margin: 5px 0; /* Add space between buttons */
+  }
+
+  .oyster-index {
+    margin-left: 20px; /* Reduce side margins */
+    margin-right: 20px;
+  }
+
+  .mushroom-image {
+    width: 100%; /* Scale image to fit screen */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  #oyster {
+    font-size: 36px; /* Adjust font size for smaller screens */
+    text-align: center;
+  }
+
+  .container {
+    grid-template-columns: repeat(2, 1fr); /* Stack containers in one column */
+    gap: 15px; /* Reduce spacing between items */
+    padding: 20px; /* Reduce padding */
+  }
+
+  .uprightcontainer, .upleftcontainer, .lowrightcontainer, .lowleftcontainer {
+    width: auto; /* Let width adjust to screen */
+    padding: 20px;
+    justify-content: center;
+   
+    align-content: center;
+  }
+
+  .datacontainers {
+    flex-direction: column; /* Stack data containers vertically */
+    gap: 20px; /* Reduce gap */
+    margin-top: 50px;
+  }
+
+  .graph {
+    width: 60px; /* Reduce graph width */
+    height: 300px; /* Reduce graph height */
+  }
+
+  .percentage {
+    font-size: 14px; /* Smaller font for percentages */
+  }
+
+  .graph-label {
+    font-size: 12px; /* Smaller graph label */
+  }
+}
+
+/* Additional adjustments for very small phones */
+@media (max-width: 480px) {
+  .navbar {
+    font-size: 12px; /* Further reduce font size */
+    padding: 5px;
+  }
+
+  .homebutton, .databutton, .recordbutton, .aboutbutton {
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  #oyster {
+    font-size: 24px; /* Adjust title size */
+  }
+
+  .graph {
+    width: 40px;
+    height: 200px;
+  }
+
+  .graph-label {
+    font-size: 10px;
+  }
+
+  .uprightcontainer, .upleftcontainer, .lowrightcontainer, .lowleftcontainer {
+    padding: 10px;
+  }
+}

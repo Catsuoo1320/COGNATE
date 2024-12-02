@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style/records.css" rel="stylesheet"/>
+    <title>RECORDS - COGNATE</title>
+</head>
+<body>
+    <section>
+        <div class="navbar">
+            <span class="logo">10:00 AM</span>
+            <a href="home.html" class="homebutton">Home</a>
+            <a href="index.html" class="databutton">Data</a>
+            <a href="records.html" class="recordbutton">Records</a>
+            <a href="about.html" class="aboutbutton">About</a>
+        
+          </div>
+    </section>
+
+    <div class="green-background">
+        <div class="picanalysis">
+            <div class="picture"></div>
+            <img id="camera-feed" alt="Image Captured" class="camera-feed-image">
+    
+            <div id="image-analysis">Analysis: </div>
+            <div id="image-timestamp">Captured at: </div>
+        </div>
+       
+    </div>
+
+    <script>
+ let previousImageUrl = null;
+
+function updateimagemotionStatus() {
+    fetch('http://192.168.0.112:5000/latest-image')
+        .then(response => response.json()) // Parse the response as JSON
+        .then(data => {
+            const imgElement = document.getElementById('camera-feed');
+            const analizeElement = document.getElementById('image-analysis');
+            const timestampElement = document.getElementById('image-timestamp');
+
+            // Revoke the previous object URL to free memory
+            if (previousImageUrl) {
+                URL.revokeObjectURL(previousImageUrl);
+            }
+
+            // Set the image src using the Base64 data returned from Flask
+            const newImageUrl = 'data:image/jpeg;base64,' + data.image_data; // Prepend 'data:image/jpeg;base64,' to the Base64 string
+            imgElement.src = newImageUrl;
+
+            // Display the analysis and timestamp
+            analizeElement.textContent = `Analysis: ${data.analize}`;
+            timestampElement.textContent = `Captured at: ${data.timemush}`;
+
+            // Store the new URL to revoke it later
+            previousImageUrl = newImageUrl;
+        })
+        .catch(error => console.error('Error fetching the image:', error));
+}
+
+// Update the image every 2 seconds
+setInterval(updateimagemotionStatus, 2000);
+
+// Initial call when the page loads
+updateimagemotionStatus();;
+
+    </script>
+    
+ 
+
+</body>
+</html>
