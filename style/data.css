@@ -574,7 +574,7 @@ p {
   body {
     flex-direction: column;
     height: auto; /* Allow the height to adjust dynamically */
-    padding: 10px;
+    padding: 10vw;
   }
 
   .navbar {
@@ -588,14 +588,14 @@ p {
 
   .homebutton, .databutton, .recordbutton, .aboutbutton {
     width: 100%; /* Make buttons span full width */
-    padding: 8px;
-    font-size: 16px;
-    margin: 5px 0; /* Add space between buttons */
+    padding: 8vw;
+    font-size: 16vw;
+    margin: 5vw 0; /* Add space between buttons */
   }
 
   .oyster-index {
-    margin-left: 20px; /* Reduce side margins */
-    margin-right: 20px;
+    margin-left: 20vw; /* Reduce side margins */
+    margin-right: 20vw;
   }
 
   .mushroom-image {
@@ -610,13 +610,14 @@ p {
 
   .container {
     grid-template-columns: repeat(2, 1fr); /* Stack containers in one column */
-    gap: 15px; /* Reduce spacing between items */
-    padding: 20px; /* Reduce padding */
+    gap: 10vw; /* Reduce spacing between items */
+    padding: 10vw; /* Reduce padding */
+    justify-content: center;
   }
 
   .uprightcontainer, .upleftcontainer, .lowrightcontainer, .lowleftcontainer {
     width: auto; /* Let width adjust to screen */
-    padding: 20px;
+    padding: 10vw;
     justify-content: center;
    
     align-content: center;
@@ -624,21 +625,21 @@ p {
 
   .datacontainers {
     flex-direction: column; /* Stack data containers vertically */
-    gap: 20px; /* Reduce gap */
-    margin-top: 50px;
+    gap: 10vw; /* Reduce gap */
+    margin-top: 5vw;
   }
 
   .graph {
-    width: 60px; /* Reduce graph width */
-    height: 300px; /* Reduce graph height */
+    width: 60vw; /* Reduce graph width */
+    height: 300vw; /* Reduce graph height */
   }
 
   .percentage {
-    font-size: 14px; /* Smaller font for percentages */
+    font-size: 14vw; /* Smaller font for percentages */
   }
 
   .graph-label {
-    font-size: 12px; /* Smaller graph label */
+    font-size: 12vw; /* Smaller graph label */
   }
 }
 
