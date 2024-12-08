@@ -170,7 +170,7 @@ body {
 
 .green-background {
     width: 100%; /* Full width */
-    height: 700px; /* Adjust the height as needed */
+  padding-bottom: 20px;
     background-color: #5f6f52; /* Green background color */
     margin: 20px 200px; /* Optional: Adds space above and below the green space */
     justify-content: center;

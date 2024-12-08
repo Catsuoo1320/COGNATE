@@ -20,12 +20,16 @@
    
 <section>
     <div class="navbar">
-        <span class="logo">10:00 AM</span>
+       
+        <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
+        <div class="overlay"></div>
+          <nav class="nav-links"></nav>
+          <span class="logo">10:00 AM</span>
         <a href="home.html" class="homebutton">Home</a>
         <a href="index.html" class="databutton">Data</a>
         <a href="records.html" class="recordbutton">Records</a>
         <a href="about.html" class="aboutbutton">About</a>
-       
+    </nav>
       </div>
 
     </section>
@@ -297,5 +301,28 @@ setInterval(updateWaterLevel, 1000);
     // Call the updateWaterLevel function every 1 second (1000 ms)
     setInterval(updateWaterLevel2, 1000);
 </script>
+
+
+<script>
+
+        function toggleSidebar() {
+            const navbar = document.querySelector('.nav-links');
+            const overlay = document.querySelector('.overlay');
+
+            navbar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        function closeSidebar() {
+            const navbar = document.querySelector('.nav-links');
+            const overlay = document.querySelector('.overlay');
+
+            if (navbar.classList.contains('active')) {
+                navbar.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+        }
+        document.querySelector('.overlay').addEventListener('click', closeSidebar);
+  </script>
 </body>
 </html>

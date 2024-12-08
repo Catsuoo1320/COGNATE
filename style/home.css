@@ -267,13 +267,29 @@ body {
 
   /* Responsive Adjustments */
 @media (max-width: 768px) {
-  .navbar {
-      justify-content: center;
+
+  body {
+    flex-direction: column;
+    height: auto; /* Allow the height to adjust dynamically */
+    padding: 2vw;
+    justify-content: center;
+    align-content: center;
   }
 
-  .navbar button {
-      padding: 8px 10px;
-      font-size: 14px;
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #ffffff; /* Ensure navbar is visually separate */
+  }
+
+  .homebutton, .databutton, .recordbutton, .aboutbutton {
+    width: 100%; /* Full width buttons */
+    margin: 5px 0; /* Add space between buttons */
+    padding: 8px; /* Reduce padding */
+    font-size: 16px; /* Adjust font size */
   }
 
   .text-home h1 {
@@ -294,14 +310,29 @@ body {
 }
 
 @media (max-width: 480px) {
-  .navbar {
-      flex-direction: column;
+
+  body {
+    flex-direction: column;
+    height: auto; /* Allow the height to adjust dynamically */
+    padding: 2vw;
+    justify-content: center;
+    align-content: center;
   }
 
-  .navbar button {
-      width: 100%;
-      padding: 10px;
-      margin: 5px 0;
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #ffffff; /* Ensure navbar is visually separate */
+  }
+
+  .homebutton, .databutton, .recordbutton, .aboutbutton {
+    width: 100%; /* Full width buttons */
+    margin: 5px 0; /* Add space between buttons */
+    padding: 8px; /* Reduce padding */
+    font-size: 16px; /* Adjust font size */
   }
 
   .text-home h1 {
